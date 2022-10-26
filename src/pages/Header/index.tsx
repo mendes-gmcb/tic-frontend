@@ -6,13 +6,13 @@ export const Header: React.FC = () => {
         <Navegacao>
                     <ul>
                         <li>
-                        <Link to="/dashboard"> Dashboard </Link>
+                            <Link to="/dashboard"> Dashboard </Link>
                         </li>
                         <li> 
-                        <Link to="/repositories"> Repositories </Link>
+                            <Link to="/repositories"> Repositories </Link>
                         </li>
                         <li> 
-                        <Link to="/about"> About </Link>
+                            <Link to="/about"> About </Link>
                         </li>
                     </ul>
         </Navegacao>
