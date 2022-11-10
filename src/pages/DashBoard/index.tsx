@@ -54,7 +54,7 @@ export const DashBoard: React.FC = () => {
             <Repo>
                 { repos.map( (item, indice) => (
                         <Link 
-                            to={`/repositories/facebook-react`}
+                            to={`/repositories/${item.full_name.replace("/", "-")}`}
                             key={item.full_name + indice}>
                             <img src={item.owner.avatar_url} alt={item.owner.login}/>
                             <div>
