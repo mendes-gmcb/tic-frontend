@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
+import { isTemplateExpression } from 'typescript';
 import logo from '../../assets/logo.svg'
 import { api } from '../../services/api';
-import {Title, Formulario} from './styles'
+import {Title, Formulario, Repo} from './styles'
 
 export const DashBoard: React.FC = () => {
     // cria uma interface que contém os campos de um repositório no git
@@ -27,10 +29,12 @@ export const DashBoard: React.FC = () => {
     async function handleAddRepo(event: React.FormEvent<HTMLFormElement>, ): Promise<void> {
         // não atualiza a página
         event.preventDefault()
+        console.log(`Entrou`)
         // chama a api
         try {
             const resp = await api.get<IGithubRepository>(`repos/${novoRepo}`)
             const aux = resp.data
+            console.log(aux)
             setRepos([...repos, aux])
         }
         catch{
@@ -46,6 +50,21 @@ export const DashBoard: React.FC = () => {
                 <input onChange={handleInputChange} placeholder="username/nome_repo"/>
                 <button type="submit"> Buscar </button>
             </Formulario>
+            {/* lista os repositórios contidos no vetor repos*/}
+            <Repo>
+                { repos.map( (item, indice) => (
+                        <Link 
+                            to={`/repositories/facebook-react`}
+                            key={item.full_name + indice}>
+                            <img src={item.owner.avatar_url} alt={item.owner.login}/>
+                            <div>
+                                <strong> {item.full_name}</strong>
+                                <p> {item.description} </p>
+                            </div>
+                        </Link>
+                    ))
+                }    
+            </Repo>
          </>
     )
 }   
