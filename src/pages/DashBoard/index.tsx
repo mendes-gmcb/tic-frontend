@@ -53,6 +53,8 @@ export const DashBoard: React.FC = () => {
             {/* lista os repositórios contidos no vetor repos*/}
             <Repo>
                 { repos.map( (item, indice) => (
+                        //o fullname do repositório terá a troca da / por -
+                        // isso é preciso para não dar problema na rota, pois full_name tem /
                         <Link 
                             to={`/repositories/${item.full_name.replace("/", "-")}`}
                             key={item.full_name + indice}>
