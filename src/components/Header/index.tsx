@@ -6,13 +6,16 @@ export const Header: React.FC = () => {
         <Navegacao>
                     <ul>
                         <li>
-                            <Link to="/dashboard"> Dashboard </Link>
+                            <Link to="/home"> Home </Link>
+                        </li>
+                        <li>
+                            <Link to="/church-ministry"> Pastoral </Link>
                         </li>
                         <li> 
-                            <Link to="/repositories"> Repositories </Link>
+                            <Link to="/users"> Usuários </Link>
                         </li>
                         <li> 
-                            <Link to="/about"> About </Link>
+                            <Link to="/profile"> Perfil </Link>
                         </li>
                     </ul>
         </Navegacao>

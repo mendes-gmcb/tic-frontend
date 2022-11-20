@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        background: #f0f0f0 url(${imgBackground}) no-repeat 70% top;
+        background: #f0f0f0;
     }
     #root { // o rem depende do tamanho do dispositivo (responsividade) 
         max-width: 960px;

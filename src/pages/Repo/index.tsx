@@ -43,7 +43,11 @@ export const Repo: React.FC = () => {
     {/* vetor contendo as issues */}
     const [issues, setIssues] = React.useState<GithubIssue[]>([])
     // como repository tem -, temos que converter novamente para /
-    let aux = repository?.replace("-", "/")
+
+    let aux = '';
+    if (typeof repository != 'undefined') {
+        aux = repository.replace("-", "/")
+    }
     
     {/* será executado quando a página for carregada ou a variável aux for alterada*/}
 
