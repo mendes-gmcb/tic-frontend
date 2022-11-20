@@ -6,7 +6,7 @@ export const Header: React.FC = () => {
     <Navegacao>
       <ul>
         <li>
-          <Link to="/home"> Home </Link>
+          <Link to="/"> Home </Link>
         </li>
         <li>
           <Link to="/church-ministry"> Pastoral </Link>

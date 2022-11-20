@@ -7,7 +7,7 @@ interface AddButtonProps {
     url: string;
 }
 
-export const AddButton: React.FC<AddButtonProps> = (url) => {
+export const AddButton: React.FC<AddButtonProps> = ({url}) => {
     return (
     <Add>
       <Link to={`/${url}/add`}> + </Link>

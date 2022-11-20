@@ -65,9 +65,13 @@ export function AuthProvider(props: AuthProvider) {
     if (token) {
       apiLocal.defaults.headers.common.authorization = `Bearer ${token}`;
 
-      apiLocal.get<User>("/user/show").then((response) => {
-        setUser(response.data);
-      });
+      try {
+        apiLocal.get<User>("/user/show").then((response) => {
+          setUser(response.data);
+        });
+      } catch (e) {
+        console.log(e)
+      }
     }
   }, []);
 

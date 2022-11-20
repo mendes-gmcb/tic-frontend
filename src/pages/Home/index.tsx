@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { apiLocal } from "../../services/api";
-import { Title } from "./styles";
+import { Title } from "../../components/Title";
 import { AddButton } from "../../components/AddButton";
+import { List } from './styles';
 
 interface ChurchMinistry {
-  uuid: string;
+  id: string;
   name: string;
   description: string;
   creator_id: string;
@@ -18,21 +19,22 @@ export const Home: React.FC = () => {
     setChurchMinistry(ministry.data);
   }
 
-  getMinistry();
+  useEffect(() => {
+    getMinistry()
+ }, []);
 
   return (
     <>
-      <Title>Pastoral</Title>
-      <ul>
-        {churchMinistry.map((ministry) => (
-          <li>
-            <Link to={`/church-ministry/${ministry.uuid}`}>
-              {" "}
-              {ministry.name}{" "}
+      <Title text={'Pastorais'} />
+      <List>
+        {churchMinistry.map((ministry, i) => (
+          <li key={i}>
+            <Link to={`/church-ministry/${ministry.id}`}>
+              {ministry.name || "Nome não encontrado"}
             </Link>
           </li>
         ))}
-      </ul>
+      </List>
       <AddButton url={"church-ministry"}></AddButton>
     </>
   );
