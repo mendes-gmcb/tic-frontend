@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { apiLocal } from "../../services/api";
 import { Title } from "./styles";
-import { AddButton } from "../../components/AddButton";
 
 interface ChurchMinistry {
   uuid: string;
@@ -11,7 +10,7 @@ interface ChurchMinistry {
   creator_id: string;
 }
 
-export const Home: React.FC = () => {
+export const AddChurchMinistry: React.FC = () => {
   const [churchMinistry, setChurchMinistry] = useState<ChurchMinistry[]>([]);
   async function getMinistry() {
     const ministry = await apiLocal.get<ChurchMinistry[]>("/pastoral");
@@ -22,18 +21,8 @@ export const Home: React.FC = () => {
 
   return (
     <>
-      <Title>Pastoral</Title>
-      <ul>
-        {churchMinistry.map((ministry) => (
-          <li>
-            <Link to={`/church-ministry/${ministry.uuid}`}>
-              {" "}
-              {ministry.name}{" "}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <AddButton url={"church-ministry"}></AddButton>
+      <Title>Criar Pastoral</Title>
+      
     </>
   );
 };

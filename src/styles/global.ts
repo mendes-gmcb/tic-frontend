@@ -1,8 +1,8 @@
-// vamos definir os estilos globais 
+// vamos definir os estilos globais
 
 import { createGlobalStyle } from "styled-components";
 
-import imgBackground from '../assets/background.svg'
+import imgBackground from "../assets/background.svg";
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -18,4 +18,4 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0 auto;
         padding: 2.5rem 1.25rem;
     }
-`
+`;

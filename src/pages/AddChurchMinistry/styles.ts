@@ -8,3 +8,14 @@ export const Title = styled.h1`
   margin: 2vh 1rem 0;
 `;
 
+export const Form = styled.form`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    div {
+        
+    }
+`
