@@ -38,7 +38,7 @@ export const AddChurchEvents: React.FC = () => {
     };
 
     try {
-      const { data } = await apiLocal.post<Event>("/pastoral", newEvent);
+      const { data } = await apiLocal.post<Event>("/celebration", newEvent);
       const evento = data;
     } catch (error) {
       MySwal.fire({

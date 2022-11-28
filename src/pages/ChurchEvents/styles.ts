@@ -13,6 +13,22 @@ export const Tasks = styled.ul`
   align-items: center;
   gap: 1rem;
 
+  &::-webkit-scrollbar {
+    width: .5rem; /* width of the entire scrollbar */
+    position: absolute;
+    z-index: -99;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: none; /* color of the tracking area */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #0000f5; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 0; /* creates padding around scroll thumb */
+  }
+
   li {
     width: 100%;
     max-width: 100vw;
@@ -103,6 +119,24 @@ export const Tasks = styled.ul`
     button {
       &:hover {
         filter: brightness(0.7);
+      }
+    }
+  }
+
+  @media screen and (min-width: 400px) {
+    li {
+      div {
+        overflow-x: hidden;
+      }
+    }
+  }
+
+  @media screen and (min-width: 500px) {
+    li {
+      div {
+        p {
+          width: 10rem;
+        }
       }
     }
   }

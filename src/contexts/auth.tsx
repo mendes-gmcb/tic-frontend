@@ -72,7 +72,6 @@ export function AuthProvider(props: AuthProvider) {
         setUser(response.data);
       })
       .catch(({ response }) => {
-        console.log(response.data);
         signOut();
         
         if (!user && window.location.pathname != "/") window.location.href="http://localhost:3000/";
