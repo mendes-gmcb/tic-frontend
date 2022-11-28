@@ -13,7 +13,7 @@ type User = {
 type Credentials = {
   email: string;
   password: string;
-}
+};
 
 type AuthContextData = {
   user: User | null;
@@ -64,15 +64,19 @@ export function AuthProvider(props: AuthProvider) {
 
     if (token) {
       apiLocal.defaults.headers.common.authorization = `Bearer ${token}`;
-
-      try {
-        apiLocal.get<User>("/user/show").then((response) => {
-          setUser(response.data);
-        });
-      } catch (e) {
-        console.log(e)
-      }
     }
+
+    apiLocal
+      .get<User>("/user/show")
+      .then((response) => {
+        setUser(response.data);
+      })
+      .catch(({ response }) => {
+        console.log(response.data);
+        signOut();
+        
+        if (!user && window.location.pathname != "/") window.location.href="http://localhost:3000/";
+      });
   }, []);
 
   return (

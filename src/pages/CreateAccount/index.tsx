@@ -63,7 +63,7 @@ export const CreateAccount: React.FC = () => {
 			// login automático
       
       //redireciona para home do app
-      navigate('/home')
+      navigate('/')
     } catch {
       MySwal.fire({
         title: <h2>Erro</h2>,

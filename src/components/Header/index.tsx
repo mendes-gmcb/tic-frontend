@@ -6,10 +6,10 @@ export const Header: React.FC = () => {
     <Navegacao>
       <ul>
         <li>
-          <Link to="/"> Home </Link>
+          <Link to="/"> Pastoral </Link>
         </li>
         <li>
-          <Link to="/church-ministry"> Pastoral </Link>
+          <Link to="/events"> Eventos </Link>
         </li>
         <li>
           <Link to="/users"> Usuários </Link>

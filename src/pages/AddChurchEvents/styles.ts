@@ -8,7 +8,6 @@ export const Form = styled.form`
   align-items: center;
 
   padding: 0 2rem;
-
   input {
     display: block;
     width: 100%;
@@ -28,9 +27,8 @@ export const Form = styled.form`
     border: 0;
     color: #fff;
     font-weight: bold;
+    &.hover {
+        filter: opacity(1.25);
+    }
   }
-
-  button ~ button {
-    background-color: #DF3A17;
-  }
-`
+`;
