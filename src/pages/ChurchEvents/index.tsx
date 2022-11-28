@@ -1,5 +1,4 @@
 import React, { Component, useEffect, useState } from "react";
-import { FiCheckSquare, FiTrash } from "react-icons/fi";
 import { apiLocal } from "../../services/api";
 import { Tasks } from "./styles";
 import Swal from "sweetalert2";

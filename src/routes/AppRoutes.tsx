@@ -8,7 +8,7 @@ import { AddChurchMinistry } from "../pages/AddChurchMinistry";
 import { ChurchMinistry } from "../pages/ChurchMinistry";
 import { ChurchEvents } from "../pages/ChurchEvents";
 import { AddChurchEvents } from "../pages/AddChurchEvents";
-import { About } from "../pages/About";
+import { Profile } from "../pages/Profile";
 import { AuthContext } from "../contexts/auth";
 
 const AppRoutes: React.FC = () => {
@@ -25,7 +25,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<ChurchEvents />}/>
           <Route path="/event/add" element={<AddChurchEvents />}/>
-          <Route path="/about" element={<About/>} />
+          <Route path="/profile" element={<Profile/>} />
           <Route path="/church-ministry/add" element={<AddChurchMinistry />}/>
           <Route path="/church-ministry/:id" element={<ChurchMinistry />}/>
         </Routes>

@@ -19,6 +19,7 @@ type AuthContextData = {
   user: User | null;
   signOut: () => void;
   signIn: (credentials: Credentials) => void;
+  setUser: (credentials: User | null) => void;
 };
 
 type AuthResponse = {
@@ -55,8 +56,9 @@ export function AuthProvider(props: AuthProvider) {
   }
 
   function signOut() {
-    setUser(null);
     localStorage.removeItem("@tic:token");
+    setUser(null);
+    if (window.location.pathname != "/") window.location.href="http://localhost:3000/";
   }
 
   useEffect(() => {
@@ -72,6 +74,7 @@ export function AuthProvider(props: AuthProvider) {
         setUser(response.data);
       })
       .catch(({ response }) => {
+        console.log(response);
         signOut();
         
         if (!user && window.location.pathname != "/") window.location.href="http://localhost:3000/";
@@ -79,7 +82,7 @@ export function AuthProvider(props: AuthProvider) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, signOut, signIn }}>
+    <AuthContext.Provider value={{ user, signOut, signIn, setUser }}>
       {props.children}
     </AuthContext.Provider>
   );

@@ -28,7 +28,6 @@ export class RemoveButton extends React.Component<RemoveButtonProps> {
     this.handleClick = this.handleClick.bind(this);
   }
 
-
   handleClick = () => {
     const id = this.props.eventId;
     
